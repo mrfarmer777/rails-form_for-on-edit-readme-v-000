@@ -1006,3 +1006,23 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
   Rendered posts/edit.html.erb within layouts/application (1.3ms)
 Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/5" for 76.245.251.194 at 2018-07-10 19:02:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 277ms (Views: 254.0ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/5" for 76.245.251.194 at 2018-07-10 19:02:36 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"00dYaMy5LPvZGDQRraPn3vF5x3OzXCEAnQOMZN0AvppwhmqW2RQlWnVNaOYIC4EL3D+xSqAOfsUxw/vUUhtDxw==", "post"=>{"title"=>"sh", "description"=>"asdvasd"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "sh"], ["description", "asdvasd"], ["updated_at", "2018-07-10 19:02:36.646997"], ["id", 5]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Redirected to http://159.203.187.180:42207/posts/5
+Completed 302 Found in 80ms (ActiveRecord: 2.8ms)
